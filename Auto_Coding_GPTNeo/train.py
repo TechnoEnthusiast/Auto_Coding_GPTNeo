@@ -8,8 +8,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-MODEL_MAP = {"distilgpt2": "distilgpt2", "gpt2": "gpt2", "gpt2_medium": "gpt2-medium",
-             "gpt2_large": "gpt2-large"}
+MODEL_MAP = {"gpt-neo-125M": "gpt-neo-125M", "gpt-neo-1.3B": "gpt-neo-1.3B", "gpt-neo-2.7B": "gpt-neo-2.7B"}
 
 from model import GPTSingleHead
 from trainer import ModelTrainer
@@ -19,7 +18,7 @@ from evaluate import SingleCLMEvaluator
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Hyper params')
     parser.add_argument('--model_select', type=str, default="distilgpt2",
-                        help='model select from distilgpt2, gpt2_medium, gpt2, or gpt2_large')
+                        help='model select from gpt-neo-125M, gpt-neo-1.3B, gpt-neo-2.7B')
     parser.add_argument('--dataset_name', type=str, default="source_code",
                         help='dataset name whatever name you put into the ./dataset directory (by default: source_code)')
     parser.add_argument('--per_gpu_train_batch_size', type=int, default=4,
