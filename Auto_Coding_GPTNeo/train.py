@@ -8,7 +8,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-MODEL_MAP = {"gpt-neo-125M": "gpt-neo-125M", "gpt-neo-1.3B": "gpt-neo-1.3B", "gpt-neo-2.7B": "gpt-neo-2.7B"}
+MODEL_MAP = {"gpt_neo_125M": "EleutherAI/gpt-neo-125M", "gpt_neo_1.3B": "EleutherAI/gpt-neo-1.3B", "gpt_neo_2.7B": "EleutherAI/gpt-neo-2.7B"}
 
 from model import GPTSingleHead
 from trainer import ModelTrainer
